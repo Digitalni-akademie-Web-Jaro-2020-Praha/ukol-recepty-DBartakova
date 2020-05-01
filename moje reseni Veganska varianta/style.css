@@ -1,0 +1,206 @@
+/* nejsme vcerejsi, pouzivame moderni box model */
+html {
+  box-sizing: border-box;
+}
+*,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+/* -------------------------------------------------- */
+
+/*
+pouzivame mobile first pristup
+tj. vychozi styly mimo media query jsou pro nejmensi mobilni zarizeni (telefony)
+s pribyvajici sirkou pridavame media query pro...
+tablety:
+@media (min-width: 480px) {
+}
+notebook/pc:
+@media (min-width: 860px) {
+}
+*/
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.paticka {
+  text-align: center;
+  font-size: 14px;
+  color: silver;
+}
+
+.paticka a {
+  color: silver;
+}
+
+/* ------------------------------- */
+/* ----- DOLE BUDE TVOJE CSS ----- */
+/* ------------------------------- */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  color: white;
+  text-shadow: 1px 1px gray;
+}
+
+.nextRecipe {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.salad {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(images/salat.jpg);
+  background-color: silver;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+}
+
+.bread {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-grow: 1; */
+  background-image: url(images/chlebicek.jpg);
+  background-color: silver;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  width: 100%;
+  min-height: 90px;
+  padding: 10px;
+}
+
+.tacos {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(images/tacos.jpg);
+  background-color: silver;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  width: 100%;
+  min-height: 90px;
+  padding: 10px;
+}
+
+.pita {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(images/cizrna.jpg);
+  background-color: silver;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: 1px solid white;
+  width: 100%;
+  min-height: 90px;
+  padding: 10px;
+}
+
+.burger {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(images/burger.jpg);
+  background-color: silver;
+  background-size: cover;
+  background-position: center center;
+  border-bottom: 1px solid white;
+  width: 100%;
+  min-height: 90px;
+  padding: 10px;
+}
+
+h2,
+h3 {
+  align-self: flex-end;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.categoryComments {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+footer {
+  display: none;
+}
+
+/* tablety: */
+@media screen and (min-width: 480px) and (max-width: 859px) {
+  .salad {
+    min-height: 250px;
+    padding: 20px;
+  }
+  .bread,
+  .tacos,
+  .pita,
+  .burger {
+    min-height: 150px;
+    padding: 20px;
+    width: 50%;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+}
+/* notebook/pc: */
+@media screen and (min-width: 860px) {
+  main {
+    flex-wrap: nowrap;
+  }
+
+  .salad {
+    min-height: 400px;
+    padding: 20px;
+    width: 33%;
+  }
+
+  .nextRecipe {
+    width: 66%;
+  }
+
+  .bread,
+  .tacos,
+  .pita,
+  .burger {
+    min-height: 200px;
+    padding: 20px;
+    width: 50%;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+}
