@@ -54,73 +54,55 @@ main {
   flex-wrap: wrap;
 }
 
-.salad {
+.firstPcGroup,
+.secondPcGroup {
   display: flex;
   flex-wrap: wrap;
-  background-image: url(images/salat.jpg);
-  background-color: silver;
-  background-size: cover;
-  background-position: center center;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
-  width: 100%;
-  min-height: 200px;
-  padding: 10px;
+  flex-basis: 100%;
+  flex-grow: 1;
 }
-
-.bread {
-  display: flex;
-  flex-wrap: wrap;
-  /* flex-grow: 1; */
-  background-image: url(images/chlebicek.jpg);
-  background-color: silver;
-  background-size: cover;
-  background-position: center center;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
-  width: 100%;
-  min-height: 90px;
-  padding: 10px;
-}
-
-.tacos {
-  display: flex;
-  flex-wrap: wrap;
-  background-image: url(images/tacos.jpg);
-  background-color: silver;
-  background-size: cover;
-  background-position: center center;
-  border-bottom: 1px solid white;
-  border-right: 1px solid white;
-  width: 100%;
-  min-height: 90px;
-  padding: 10px;
-}
-
-.pita {
-  display: flex;
-  flex-wrap: wrap;
-  background-image: url(images/cizrna.jpg);
-  background-color: silver;
-  background-size: cover;
-  background-position: center center;
-  border-bottom: 1px solid white;
-  width: 100%;
-  min-height: 90px;
-  padding: 10px;
-}
-
+.salad,
+.bread,
+.tacos,
+.pita,
 .burger {
   display: flex;
   flex-wrap: wrap;
-  background-image: url(images/burger.jpg);
+  flex-grow: 1;
   background-color: silver;
   background-size: cover;
   background-position: center center;
   border-bottom: 1px solid white;
-  width: 100%;
-  min-height: 90px;
   padding: 10px;
+  flex-basis: 100%;
+}
+
+.bread,
+.tacos,
+.pita,
+.burger {
+  min-height: 90px;
+}
+
+.salad {
+  background-image: url(images/salat.jpg);
+  min-height: 200px;
+}
+
+.bread {
+  background-image: url(images/chlebicek.jpg);
+}
+
+.tacos {
+  background-image: url(images/tacos.jpg);
+}
+
+.pita {
+  background-image: url(images/cizrna.jpg);
+}
+
+.burger {
+  background-image: url(images/burger.jpg);
 }
 
 h2,
@@ -144,8 +126,8 @@ h3 {
   font-size: 14px;
   font-weight: 400;
   display: flex;
+  flex-basis: 100%;
   justify-content: space-between;
-  width: 100%;
 }
 
 footer {
@@ -164,7 +146,15 @@ footer {
   .burger {
     min-height: 150px;
     padding: 20px;
-    width: 50%;
+    flex-grow: 2;
+  }
+  .firstPcGroup,
+  .secondPcGroup {
+    flex-wrap: nowrap;
+  }
+  .bread,
+  .pita {
+    border-right: 1px solid white;
   }
   h2 {
     font-size: 36px;
@@ -181,12 +171,18 @@ footer {
 
   .salad {
     min-height: 400px;
+    flex-grow: 1;
     padding: 20px;
-    width: 33%;
+    flex-grow: 1;
+    border-right: 1px solid white;
   }
 
   .nextRecipe {
-    width: 66%;
+    flex-grow: 2;
+  }
+  .firstPcGroup,
+  .secondPcGroup {
+    flex-wrap: nowrap;
   }
 
   .bread,
@@ -195,7 +191,11 @@ footer {
   .burger {
     min-height: 200px;
     padding: 20px;
-    width: 50%;
+    flex-grow: 1;
+  }
+  .bread,
+  .pita {
+    border-right: 1px solid white;
   }
   h2 {
     font-size: 48px;
